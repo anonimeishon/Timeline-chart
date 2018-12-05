@@ -1,1 +1,3 @@
 https://community.plot.ly/t/how-to-change-gantt-charts-date-format/16469
+
+https://github.com/d3/d3-time-format/blob/master/README.md#locale_format
