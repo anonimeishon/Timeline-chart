@@ -11,4 +11,4 @@ fig.layout.xaxis.tickformat = '%j'
 
 fig['layout']['annotations'] = [dict(x='2009-02-01',y=0,text="This is a label", showarrow=False, font=dict(color='white'))]
 
-plotly.offline.plot(fig, filename='dildo.html')
+plotly.offline.plot(fig, filename='prueba.html')
