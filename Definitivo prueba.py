@@ -25,7 +25,6 @@ def readtsv():
 def anotar(basura,fig, labels):
       trash = []
       identificador = []
-      print(labels)
       #check how many tasks there are
       for i in basura:
             if i.get("Task") not in identificador:
@@ -35,19 +34,28 @@ def anotar(basura,fig, labels):
       ids = []
       for i in range(len(identificador)-1,-1,-1):
             ids.append(i)
+            v=0                        
 
       #assign annotations to each resource according to the
       #task they are assigned to
-      for i in basura:                          
-            print (i.get("Start")) 
-            for j in range(len(identificador)):
-                  v = 0
-                  if i.get("Task") == identificador[j]:
-                        trash.append(dict(x=i.get("Start"),y=ids[j],text=labels[v], showarrow=True, font=dict(color='black')))
-                  v= v+1
+      for i in basura:  
 
-      #layout = go.Layout(showlegend=False,annotations=tuple(trash))
+            for j in range(len(identificador)):
+                  valor = str(labels[v])
+                  if i.get("Task") == identificador[j]:
+                        trash.append(dict(x=i.get("Start"),y=ids[j],text=valor, showarrow=True, font=dict(color='black')))
+                        quit
+            v = v+1
       fig['layout']['annotations'] = tuple(trash)
+'''      for i in basura:  
+            v=0                        
+            for j in range(len(identificador)):
+                  valor = str(labels[v])
+                  if i.get("Task") == identificador[j]:
+                        trash.append(dict(x=i.get("Start"),y=ids[j],text=valor, showarrow=True, font=dict(color='black')))
+                  v= v+1
+'''
+      #layout = go.Layout(showlegend=False,annotations=tuple(trash))
 
 
 if __name__ == "__main__":
@@ -64,8 +72,6 @@ if __name__ == "__main__":
       #fig['layout']['xaxis']['tickvals'] = pd.date_range('2000-01-01', '2100-03-01', freq='d')
       #fig['layout']['xaxis']['ticktext'] = list(range(len(fig['layout']['xaxis']['tickvals'])))
       
-      print (type(fig))
-
       anotar(lista, fig, labels)
 
       plotly.offline.plot(fig, filename='dildo.html')

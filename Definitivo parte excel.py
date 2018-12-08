@@ -61,16 +61,14 @@ def writetsv(task, start, finish, maquina, text):
 
 if __name__ == "__main__":
     n = 3
-    starto = 4
-    finisho = 6
+    starto = 9
+    finisho = 15
     dehtos = convertion(starto)
     dehtof = convertion(finisho)
-    usertask = "2"
+    usertask = "1"
     usermaquina = "maquina 4"
-    tag = "mondaaaa"
+    tag = "pene gigantemente gordo"
     writetsv(usertask, dehtos, dehtof, usermaquina, tag)
     maquinas = ['''esta monda se llena con las maquinas inputeadas en inputo cuando este marica termine la interfaz grafica''']
     inputo = ['''aqui se meten los diccionarios de los inputos con la monda grafica de este man''']
 
-
-    print (dehtos, "\n",dehtof)
